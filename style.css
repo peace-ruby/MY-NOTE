@@ -1,0 +1,133 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  height: 100vh;
+  background: #121212; /* dark background */
+  color: #fff;
+}
+
+.editor {
+  width: 50%;
+  padding: 20px;
+  background: #1e1e1e;
+  display: flex;
+  flex-direction: column;
+}
+
+.editor h2 {
+  color: #fff;
+}
+
+textarea {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  resize: none;
+  border-radius: 5px;
+  border: 1px solid #333;
+  background: #2a2a2a;
+  color: #fff;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background: #007bff;
+  color: white;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+.notes-list {
+  width: 50%;
+  padding: 20px;
+  background: #181818;
+  border-left: 2px solid #333;
+  overflow-y: auto;
+}
+
+.notes-list h2 {
+  color: #fff;
+}
+
+.note {
+  position: relative;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  background: #242424;
+  cursor: pointer;
+  color: #ddd;
+}
+
+.note:hover {
+  background: #333;
+}
+
+.note-title {
+  font-weight: bold;
+  margin-bottom: 6px;
+  font-size: 16px;
+  color: #fff;
+}
+
+.note-content {
+  font-size: 14px;
+  color: #bbb;
+}
+
+.delete-btn {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: none;
+  font-size: 16px;
+  color: #ff4d4d;
+}
+
+.note:hover .delete-btn {
+  display: block;
+}
+
+.note {
+  position: relative;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  background: #242424;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+  color: #ddd;
+  word-wrap: break-word;       
+  overflow-wrap: break-word; 
+}
+
+.note-title {
+  font-weight: bold;
+  margin-bottom: 6px;
+  font-size: 16px;
+  color: #fff;
+  word-wrap: break-word;       
+  overflow-wrap: break-word;
+}
+
+.note-content {
+  font-size: 14px;
+  color: #bbb;
+  white-space: pre-wrap;
+  word-wrap: break-word;       
+  overflow-wrap: break-word;
+}
+
