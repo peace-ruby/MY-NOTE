@@ -7,17 +7,25 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="editor">
-    <h2>Write your Note</h2>
-    <textarea id="noteInput" placeholder="Type your note here..."></textarea>
-    <button onclick="saveNote()">Save Note</button>
-  </div>
-
   <div class="notes-list" id="notesList">
-    <h2>Saved Notes</h2>
+    <div class="notes-header">
+      <h2>My Notes</h2>
+    </div>
+
+    <div id="notesItems"></div>
+
+    <div class="notes-footer">
+      <button id="addNoteBtn">New note</button>
+    </div>
   </div>
 
-  
+  <div class="editor resize-container">
+    <h2>Note</h2>
+    <textarea id="noteInput" class="resizable-textarea" placeholder="Untitled Note"></textarea>
+    <div id="resizeHandle" class="resize-handle">
+      <hr> <hr> <hr>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
