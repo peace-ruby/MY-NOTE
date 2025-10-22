@@ -16,6 +16,7 @@
 
     <div class="notes-footer">
       <button id="addNoteBtn">New note</button>
+      
     </div>
   </div>
 
@@ -27,6 +28,24 @@
     </div>
   </div>
 
+  <!-- 🔒 Password Lock Popup -->
+  <div id="lockPopup" class="popup-container hidden">
+    <div class="popup-box">
+      <svg class="lock-icon" xmlns="http://www.w3.org/2000/svg" fill="none" 
+            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" 
+              d="M16 10V7a4 4 0 00-8 0v3M5 10h14v10H5V10z" />
+      </svg>
+      <h3>Enter Password</h3>
+      <input type="password" id="passwordInput" placeholder="Enter note password">
+      <div class="popup-buttons">
+        <button id="unlockBtn">Unlock</button>
+        <button id="cancelBtn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
   <script src="script.js"></script>
+  <script src="password.js"></script>
 </body>
 </html>

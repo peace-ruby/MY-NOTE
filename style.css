@@ -1,3 +1,5 @@
+/* Your existing styles remain unchanged — starting from here 👇 */
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -31,30 +33,33 @@ textarea {
   border: 1px solid #333;
   background: #2a2a2a;
   color: #fff;
- width: 98%;
+  width: 98%;
 }
 
 .resize-container {
-  position: relative;             
-  min-width: 190px;         
-  max-width: 900px;            
+  position: relative;
+  min-width: 190px;
+  max-width: 900px;
 }
 
 .resizable-textarea {
-  resize: none;                
+  resize: none;
   box-sizing: border-box;
 }
-.resize-handle hr{
- writing-mode: vertical-lr;
- height: 100px;
- float: left;
+
+.resize-handle hr {
+  writing-mode: vertical-lr;
+  height: 100px;
+  float: left;
 }
 
 .resize-handle {
   position: absolute;
-  right: 0;                   
-  top: 0;
-  cursor: ew-resize;          
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: ew-resize;
+  height: 20px;
 }
 
 .notes-list {
@@ -78,37 +83,18 @@ textarea {
   border-radius: 8px;
   background: #242424;
   cursor: pointer;
-  color: #ddd;
-}
-
-.note:hover {
-  background: #333;
-}
-
-.note-title {
-  font-weight: bold;
-  margin-bottom: 6px;
-  font-size: 16px;
-  color: #fff;
-}
-
-.note-content {
-  font-size: 14px;
-  color: #bbb;
-}
-
-.note {
-  position: relative;
-  padding: 12px;
-  margin-bottom: 12px;
-  border: 1px solid #333;
-  border-radius: 8px;
-  background: #242424;
-  cursor: pointer;
   transition: background 0.2s ease-in-out;
   color: #ddd;
   word-wrap: break-word;
   overflow-wrap: break-word;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.note:hover {
+  background: #333;
 }
 
 .note-title {
@@ -128,13 +114,6 @@ textarea {
   overflow-wrap: break-word;
 }
 
-.note {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-}
-
 .note img {
   width: 20px;
   height: 20px;
@@ -150,30 +129,28 @@ textarea {
 .notes-header {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 290px;
   margin-bottom: 12px;
 }
 
 #addNoteBtn {
-  padding: 6px 10px;
-  background: #333;
-  color: #fff;
+  padding: 8px 12px;
+  background: #4e04fb;
+  color: #ffffff;
+  font-family: sans-serif;
+  height: 43px;
+  width: 130px;
+  font-size: 23px;
+  margin-left: 200px;
+  margin-top: 10px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 13px;
   transition: background 0.2s;
 }
 
 #addNoteBtn:hover {
-  background: #444;
-}
-
-.notes-header {
-  display: flex;
-  align-items: center;
-  gap: 290px;
-  margin-bottom: 12px;
+  background: #00e0e0f8;
 }
 
 .note-editor {
@@ -197,15 +174,6 @@ textarea {
 
 .note-editor .first-line {
   font-weight: bold;
-}
-
-.notes-list {
-  width: 25%;
-  padding: 20px;
-  background: #181818;
-  border-left: 2px solid #333;
-  overflow-y: auto;
-  outline: none;
 }
 
 @media (max-width: 900px) {
@@ -262,6 +230,8 @@ textarea {
 #notesItems {
   flex: 1;
   overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #000 #181818;
 }
 
 .notes-footer {
@@ -270,21 +240,7 @@ textarea {
   text-align: center;
 }
 
-#addNoteBtn {
-  padding: 8px 12px;
-  background: #333;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: background 0.2s;
-}
-
-#addNoteBtn:hover {
-  background: #444;
-}
-
+/* Scrollbar styling */
 #notesItems::-webkit-scrollbar {
   width: 8px;
 }
@@ -302,21 +258,109 @@ textarea {
   background: #222;
 }
 
-#notesItems {
-  scrollbar-width: thin;
-  scrollbar-color: #000 #181818;
+/* ✅ Password Popup Styling */
+.popup-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
 }
 
-#addNoteBtn {
+.popup-container.hidden {
+  display: none;
+}
+
+.popup-box {
+  background: #1e1e1e;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 25px 30px;
+  width: 300px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.popup-box h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #fff;
+}
+
+.popup-box input {
+  width: 90%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: #2a2a2a;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+  margin-bottom: 15px;
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.popup-buttons button {
+  flex: 1;
+  padding: 8px 12px;
   background: #4e04fb;
-  color: #ffffff;
-  font-family: sans-serif;
-  height: 52px;
-  width: 130px;
-  font-size: 23px;
-  margin-left: 320px;
-  margin-top: 10px;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-size: 14px;
 }
-#addNoteBtn:hover {
-  background: #e07700;
+
+.popup-buttons button:hover {
+  background: #00e0e0f8;
 }
+
+.lock-icon {
+  width: 40px;
+  height: 40px;
+  /* color: #4e04fb; */
+  margin-bottom: 10px;
+}
+
+.lock-icon {
+  width: 45px;
+  height: 45px;
+  stroke: #4e04fb; /* makes the outline bright purple */
+  margin-bottom: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ✅ Lock Icon Visibility Fix */
+.lock-icon {
+  width: 50px;
+  height: 50px;
+  display: block;
+  margin: 15px auto 10px;
+  fill: none;
+  stroke: #4e04fb; /* Bright purple outline */
+  stroke-width: 2;
+}
+
+/* Optional: give popup background to contrast the lock */
+.popup-box {
+  background: #181818;
+  color: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+    

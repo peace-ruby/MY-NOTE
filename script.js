@@ -54,7 +54,7 @@ function displayNotes() {
 
     let noteContent = document.createElement("div");
     noteContent.className = "note-content";
-    noteContent.innerText = note.content || "No additional text...";
+    noteContent.innerText = note.content || "Additional text...";
 
     let noteDate = document.createElement("div");
     noteDate.className = "note-date";
